@@ -1,27 +1,27 @@
-# Library
+# Projeto Let´s Code Library
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
+<h1 align=center>Plataforma para emprestar livros</h1>
 
-## Development server
+## :ballot_box_with_check: Requisitos
+1. Construção da aplicação em no mínimo dois componentes.
+2. Tratamento de erros.
+3. Incluir formulário
+4. Autenticação.
+<br />
+## :interrobang: Diferenciais
+1. Qualidade visual
+    1. Estilização com css
+    2. responsividade ao tamanho da tela
+2. Arquiteturas que separem responsabilidades.
+3. Instalação e bom uso de bibliotecas externas para Angular.
+4. Código limpo (boa nomenclatura de variáveis, funções etc) e dividido em arquivos bem nomeados.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## :rocket: Deploy
+/* Prints do Front */
 
-## Code scaffolding
+<br />
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## :books: Bibliotecas instaladas
+- [Bootstrap 5](https://getbootstrap.com/)
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<br />
