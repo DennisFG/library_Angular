@@ -1,1 +1,27 @@
 
+<div class="container">
+    <div class="text-center mt-5">
+        <h2>Listagem de Usuarios</h2>
+        
+    </div>
+
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th>NOME</th>
+                <th>CPF</th>
+                <th>EMAIl</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let usuario of usuarios">
+            <tr>
+                <td>{{usuario.nome}}</td>
+                <td>{{usuario.cpf}}</td>
+                <td>{{usuario.email}}</td>
+                <td>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

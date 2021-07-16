@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Usuario } from '../usuario.model';
 
 @Component({
   selector: 'app-formulario-cliente',
@@ -7,7 +8,10 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./formulario-cliente.component.css']
 })
 export class FormularioClienteComponent implements OnInit {
-  myForm: FormGroup;
+  myForm!: FormGroup;
+  usuarios: Usuario[] = [];
+
+  @Output() createUser = new EventEmitter<any>();
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -26,8 +30,9 @@ export class FormularioClienteComponent implements OnInit {
 
   onSubmit() {
       console.log("Form Submitted!", this.myForm.value);
+      this.usuarios.push(this.myForm.value);
+      this.createUser.emit(this.myForm.value);
       this.myForm.reset();
-    
   }
   
 

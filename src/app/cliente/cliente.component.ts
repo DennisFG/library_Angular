@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from './cliente.model';
+import { Usuario } from './usuario.model';
 
 @Component({
   selector: 'app-cliente',
@@ -8,19 +8,19 @@ import { Cliente } from './cliente.model';
 })
 export class ClienteComponent implements OnInit {
 
-  clientes: Cliente[] = [{
+  usuarios: Usuario[] = [{
     id: 1,
-    nome: "Debora Orsolon",
+    name: "Debora Orsolon",
     cpf: "333.333.111-30",
     email: "debora@gmail.com",
-    senha: '123'
+    password: '123'
   },
   {
     id: 2,
-    nome: "Marco Antonio",
+    name: "Marco Antonio",
     cpf: "111.333.111-30",
     email: "marco@gmail.com",
-    senha: '300400'
+    password: '300400'
   },
 ]
 
