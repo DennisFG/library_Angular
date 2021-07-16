@@ -16,6 +16,7 @@ export class FormularioClienteComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
     ngOnInit(): void {
+      console.log("teste")
       this.myForm = new FormGroup({
         name: new FormControl("", Validators.required),
         cpf: new FormControl("", Validators.required),

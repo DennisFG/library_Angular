@@ -22,6 +22,13 @@ export class ClienteComponent implements OnInit {
     email: "marco@gmail.com",
     password: '300400'
   },
+  {
+    id: 3,
+    name: "Rodrigo Vargas",
+    cpf: "612.321.111-30",
+    email: "rodvargas@gmail.com",
+    password: '9878'
+  },
 ]
 
   constructor() { }
