@@ -25,10 +25,9 @@ export class FormularioClienteComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.myForm.valid) {
-      console.log("Form Submitted!");
+      console.log("Form Submitted!", this.myForm.value);
       this.myForm.reset();
-    }
+    
   }
   
 
