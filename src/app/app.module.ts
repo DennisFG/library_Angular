@@ -11,6 +11,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './header/header.component';
+import { ClienteComponent } from './cliente/cliente.component';
+import { FormularioClienteComponent } from './cliente/formulario-cliente/formulario-cliente.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BooksComponent,
     HomePageComponent,
     AluguelComponent,
-    BtnCreateComponent
+    BtnCreateComponent,
+    HeaderComponent,
+    ClienteComponent,
+    FormularioClienteComponent
+
   ],
   imports: [
     BrowserModule,
