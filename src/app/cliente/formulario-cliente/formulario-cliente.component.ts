@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { User } from '../usuario.model';
+import { User } from '../../models/usuario.model';
 
 @Component({
   selector: 'app-formulario-cliente',
