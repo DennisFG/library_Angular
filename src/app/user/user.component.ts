@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user.model';
 
 @Component({
-  selector: 'app-cliente',
-  templateUrl: './cliente.component.html',
-  styleUrls: ['./cliente.component.css']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
 })
-export class ClienteComponent implements OnInit {
+export class UserComponent implements OnInit {
 
   users: User[] = [];
 

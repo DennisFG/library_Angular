@@ -12,8 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
-import { ClienteComponent } from './cliente/cliente.component';
-import { FormularioClienteComponent } from './cliente/formulario-cliente/formulario-cliente.component';
+import { UserComponent } from './user/user.component';
+import { FormUserComponent } from './user/form-user/form-user.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,8 @@ import { FormularioClienteComponent } from './cliente/formulario-cliente/formula
     AluguelComponent,
     BtnCreateComponent,
     HeaderComponent,
-    ClienteComponent,
-    FormularioClienteComponent
+    UserComponent,
+    FormUserComponent
 
   ],
   imports: [

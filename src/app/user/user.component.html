@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="text-center mt-5">
+      <h2>Listagem de Usuarios</h2>
+      
+  </div>
+
+  <table class="table table-hover mt-5">
+      <thead>
+          <tr>
+              <th scope="col">NOME</th>
+              <th scope="col">CPF</th>
+              <th scope="col">EMAIL</th>
+          </tr>
+      </thead>
+      <tbody *ngFor="let user of users">
+          <tr>
+              <td>{{user.name}}</td>
+              <td>{{user.cpf}}</td>
+              <td>{{user.email}}</td>
+              <td>
+                  
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

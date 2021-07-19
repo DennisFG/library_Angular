@@ -3,11 +3,12 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { User } from '../../models/user.model';
 
 @Component({
-  selector: 'app-formulario-cliente',
-  templateUrl: './formulario-cliente.component.html',
-  styleUrls: ['./formulario-cliente.component.css']
+  selector: 'app-form-user',
+  templateUrl: './form-user.component.html',
+  styleUrls: ['./form-user.component.css']
 })
-export class FormularioClienteComponent implements OnInit {
+export class FormUserComponent implements OnInit {
+
   myForm!: FormGroup;
   users: User[] = [];
 
@@ -42,6 +43,5 @@ export class FormularioClienteComponent implements OnInit {
       user.id = i + 1;
     })
   }
-  
 
 }
