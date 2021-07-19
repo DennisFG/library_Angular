@@ -11,7 +11,6 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import { FormUserComponent } from './user/form-user/form-user.component';
 
@@ -22,7 +21,6 @@ import { FormUserComponent } from './user/form-user/form-user.component';
     HomePageComponent,
     AluguelComponent,
     BtnCreateComponent,
-    HeaderComponent,
     UserComponent,
     FormUserComponent
 
