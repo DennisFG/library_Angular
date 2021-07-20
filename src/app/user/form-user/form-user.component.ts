@@ -18,8 +18,11 @@ export class FormUserComponent implements OnInit {
 
     ngOnInit(): void {
       this.myForm = new FormGroup({
-        name: new FormControl("", Validators.required),
-        cpf: new FormControl("", Validators.required),
+        name: new FormControl("", [
+          Validators.required, Validators.minLength(3), Validators.maxLength(40)]),
+        cpf: new FormControl("", [
+          Validators.required, Validators.minLength(11), 
+          Validators.maxLength(11), Validators.pattern('^[0-9]*$')]),
         email: new FormControl('', [ 
           Validators.required,
           Validators.pattern("[^ @]*@[^ @]*") ]),

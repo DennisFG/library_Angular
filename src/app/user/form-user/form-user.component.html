@@ -30,12 +30,15 @@
               <input type="password"
                      class="form-control"
                      formControlName="password">
+                     <small class="fw-lighter">A senha deve conter 8 caracteres</small>
             </div>
-            <button type="submit" class="btn btn-outline-success mt-4" (icreateUser)="onUserCreated($event)" >Cadastrar</button>
+            <button type="submit" class="btn btn-outline-success mt-4" 
+            [disabled]="myForm.invalid"
+            (icreateUser)="onUserCreated($event)" >Cadastrar</button>
           </form>
           
       </div>
     </div>
-    <!-- <pre>{{myForm.value | json}}</pre> -->
+     <!-- <pre>{{myForm.value | json}}</pre>  -->
 
 </div>
