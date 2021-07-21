@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BooksComponent } from './books/books.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { AluguelComponent } from './books/aluguel/aluguel.component';
-import { BtnCreateComponent } from './books/aluguel/btn-create/btn-create.component';
+import { RentComponent } from './books/rent/rent.component';
+import { BtnCreateComponent } from './books/rent/btn-create/btn-create.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -21,7 +21,7 @@ import { LoginComponent } from './components/login/login.component';
     AppComponent,
     BooksComponent,
     HomePageComponent,
-    AluguelComponent,
+    RentComponent,
     BtnCreateComponent,
     UserComponent,
     FormUserComponent,
