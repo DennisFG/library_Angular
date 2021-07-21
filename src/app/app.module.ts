@@ -13,6 +13,8 @@ import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
 import { FormUserComponent } from './user/form-user/form-user.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormUserComponent } from './user/form-user/form-user.component';
     AluguelComponent,
     BtnCreateComponent,
     UserComponent,
-    FormUserComponent
+    FormUserComponent,
+    PageNotFoundComponent,
+    LoginComponent
 
   ],
   imports: [
