@@ -8,8 +8,11 @@ import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'books', component: BooksComponent },
-  { path: 'aluguel', component: AluguelComponent },
+  {
+    path: 'books', component: BooksComponent, children: [
+      { path: 'aluguel', component: AluguelComponent },
+    ]
+  },
   { path: 'user', component: UserComponent },
   // abaixo, inserir página com validação
   // {
