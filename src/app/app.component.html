@@ -13,13 +13,13 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" tabindex="-1">Livros</a>
+          <a class="nav-link" routerLink="/books" tabindex="-1">Livros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" tabindex="-1">Usuários</a>
+          <a class="nav-link" routerLink="/user" tabindex="-1">Usuários</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" tabindex="-1">Login</a>
+          <a class="nav-link" routerLink="/login" tabindex="-1">Login</a>
         </li>
       </ul>
       <form class="d-flex">
@@ -29,7 +29,10 @@
     </div>
   </div>
 </nav>
-<app-home-page></app-home-page>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<!-- <app-home-page></app-home-page> -->
 <!-- <app-form-user></app-form-user> -->
 <!-- <app-user></app-user> -->
 <!-- <app-books></app-books> -->

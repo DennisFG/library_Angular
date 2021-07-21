@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
 import { FormUserComponent } from './user/form-user/form-user.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     BtnCreateComponent,
     UserComponent,
     FormUserComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent
 
   ],
   imports: [
