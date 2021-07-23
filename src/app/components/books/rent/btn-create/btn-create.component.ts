@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, TemplateRef } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
@@ -11,8 +11,8 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class BtnCreateComponent implements OnInit {
 
   @Input() bookName: string = '';
-  aluguelFormBsModalRef!: BsModalRef;
-  aluguelForm!: FormGroup;
+  rentFormBsModalRef!: BsModalRef;
+  rentForm!: FormGroup;
 
   dateConfig: BsDatepickerConfig = new BsDatepickerConfig()
   constructor(
@@ -20,27 +20,31 @@ export class BtnCreateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.aluguelForm = new FormGroup({  
+    this.rentForm = new FormGroup({  
       date: new FormControl(),
-      name: new FormControl(),
+      cpf: new FormControl("", [
+        Validators.required, Validators.minLength(11), 
+        Validators.maxLength(11), Validators.pattern('^[0-9]*$')]),
+      name: new FormControl("", [
+        Validators.required, Validators.minLength(3), Validators.maxLength(40)]),
     })
     this.dateConfig.containerClass = 'theme-dark-blue';
   }
   
-  openAluguelFormModal(template: TemplateRef<any>) {
-    this.aluguelFormBsModalRef = this.bsModalService.show(template), {
+  openRentFormModal(template: TemplateRef<any>) {
+    this.rentFormBsModalRef = this.bsModalService.show(template), {
       class: "modal-sl-dialog-centered",
       ignoreBackdropClick: true
     }      
   }
 
-  closeAluguelFormModal(): void{
-    this.aluguelFormBsModalRef.hide();
+  closeRentFormModal(): void {    
+    this.rentFormBsModalRef.hide();    
   }
 
-  createAluguel() {
-    this.aluguelFormBsModalRef.hide();
-    console.log(this.aluguelForm)
+  createRent() {
+    this.rentFormBsModalRef.hide();
+    console.log(this.rentForm);
   }
 
 }
