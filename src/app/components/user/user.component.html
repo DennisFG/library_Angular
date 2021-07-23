@@ -10,8 +10,7 @@
               <th scope="col">NOME</th>
               <th scope="col">CPF</th>
               <th scope="col">EMAIL</th>
-              <!-- <th scope="col">EDITAR</th>
-              <th scope="col">REMOVER</th> -->
+              <th scope="col"></th>
           </tr>
       </thead>
       <tbody *ngFor="let user of users">
@@ -20,7 +19,10 @@
               <td>{{user.cpf}}</td>
               <td>{{user.email}}</td>
               <td>
-                <!-- adicionar botões para alterar/deletar usuários cadastrados -->
+                <app-edit-user></app-edit-user>
+                {{ ''}}
+                <app-deleteuser></app-deleteuser>
+              
               </td>
           </tr>
       </tbody>
