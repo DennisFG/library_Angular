@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BooksComponent } from './books/books.component';
-import { HomePageComponent } from './home-page/home-page.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 import { RentComponent } from './books/rent/rent.component';
 import { BtnCreateComponent } from './books/rent/btn-create/btn-create.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
