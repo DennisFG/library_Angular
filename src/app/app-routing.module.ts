@@ -5,7 +5,7 @@ import { BooksComponent } from './books/books.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
-import { UserComponent } from './user/user.component';
+import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
