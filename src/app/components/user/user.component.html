@@ -1,7 +1,7 @@
 <div class="container">
   <div class="text-center mt-5">
-      <h2>Listagem de Usuarios</h2>
-      
+      <h2>Listagem de Clientes</h2>
+      <app-form-user (userCreated)="onUserCreated($event)"></app-form-user>
   </div>
 
   <table class="table table-hover mt-5">
@@ -10,6 +10,8 @@
               <th scope="col">NOME</th>
               <th scope="col">CPF</th>
               <th scope="col">EMAIL</th>
+              <!-- <th scope="col">EDITAR</th>
+              <th scope="col">REMOVER</th> -->
           </tr>
       </thead>
       <tbody *ngFor="let user of users">
@@ -18,7 +20,7 @@
               <td>{{user.cpf}}</td>
               <td>{{user.email}}</td>
               <td>
-                  
+                <!-- adicionar botões para alterar/deletar usuários cadastrados -->
               </td>
           </tr>
       </tbody>

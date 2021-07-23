@@ -10,39 +10,43 @@ export class UserComponent implements OnInit {
 
   users: User[] = [];
 
-//   users: User[] = [{
-//     id: 1,
-//     name: "Debora Orsolon",
-//     cpf: "333.333.111-30",
-//     email: "debora@gmail.com",
-//     password: '123'
-//   },
-//   {
-//     id: 2,
-//     name: "Marco Antonio",
-//     cpf: "111.333.111-30",
-//     email: "marco@gmail.com",
-//     password: '300400'
-//   },
-//   {
-//     id: 3,
-//     name: "Rodrigo Vargas",
-//     cpf: "612.321.111-30",
-//     email: "rodvargas@gmail.com",
-//     password: '9878'
-//   },
-//   {
-//     id: 4,
-//     name: "Maria da Dores ",
-//     cpf: "123.321.555-30",
-//     email: "maria@gmail.com",
-//     password: '9876783'
-//   },
-// ]
+  //   users: User[] = [{
+  //     id: 1,
+  //     name: "Debora Orsolon",
+  //     cpf: "333.333.111-30",
+  //     email: "debora@gmail.com",
+  //     password: '123'
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Marco Antonio",
+  //     cpf: "111.333.111-30",
+  //     email: "marco@gmail.com",
+  //     password: '300400'
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Rodrigo Vargas",
+  //     cpf: "612.321.111-30",
+  //     email: "rodvargas@gmail.com",
+  //     password: '9878'
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "Maria da Dores ",
+  //     cpf: "123.321.555-30",
+  //     email: "maria@gmail.com",
+  //     password: '9876783'
+  //   },
+  // ]
 
   constructor() { }
 
   ngOnInit(): void {
+    // this.userService.getUser().subscribe(users => {
+    //   this.users = users
+    //   console.log(this.users);
+    // }, error => { alert("OCORREU UM ERRO!") });
   }
 
   onUserCreated(event: any) {
@@ -51,6 +55,8 @@ export class UserComponent implements OnInit {
       user.id = i + 1;
     })
     console.log(this.users);
+    // console.log(this.users);
+    // this.loggingService.clienteCadastradoLog(event.nome);
   }
 
 }
