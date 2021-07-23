@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Debora Orsolon",
+      "cpf": "333.322.877-20",
+      "email": "debora@gmail.com",
+      "password": "12349876"
+    },
+    {
+      "id": 2,
+      "name": "Rodrigo Matos",
+      "cpf": "123.144.320-10",
+      "email": "ro_ma@gmail.com",
+      "password": "87845655"
+    },
+    {
+      "name": "Vanessa Teixeira",
+      "cpf": "11122233320",
+      "email": "van@gmail.com",
+      "password": "87654321",
+      "id": 3
+    },
+    {
+      "name": "Marina Lacata",
+      "cpf": "89845677730",
+      "email": "ml@terra.com.br",
+      "password": "09878956",
+      "id": 4
+    },
+    {
+      "name": "DEBORA ORSOLON OLIVEIRA",
+      "cpf": "30453971830",
+      "email": "debora.orsolon@terra.com.br",
+      "password": "12345678",
+      "id": 5
+    }
+  ]
+}
