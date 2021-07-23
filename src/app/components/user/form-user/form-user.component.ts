@@ -32,9 +32,9 @@ export class FormUserComponent implements OnInit {
       email: new FormControl('', [
         Validators.required,
         Validators.pattern("[^ @]*@[^ @]*")]),
-      // password: new FormControl('', [
-      //   Validators.minLength(8),
-      //   Validators.required])
+      password: new FormControl('', [
+        Validators.minLength(8),
+        Validators.required])
     });
   }
 
@@ -63,5 +63,13 @@ export class FormUserComponent implements OnInit {
     // });
 
     // this.myForm.reset();
+  }
+
+  onUserCreated(event: any) {
+    console.log(event);
+    this.users.push(event);
+    this.users.forEach((user, i) => {
+      user.id = i + 1;
+    })
   }
 }
