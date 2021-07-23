@@ -54,7 +54,7 @@ export class UserComponent implements OnInit {
     this.users.forEach((user, i) => {
       user.id = i + 1;
     })
-    console.log(this.users);
+    // console.log(this.users);
     // console.log(this.users);
     // this.loggingService.clienteCadastradoLog(event.nome);
   }
