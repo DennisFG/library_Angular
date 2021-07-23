@@ -1,16 +1,17 @@
 <div class="d-grid gap-2 col-6 mx-auto">
-  <button type="button" class="btn btn-outline-dark" (click)="openAluguelFormModal(AluguelModalCreateTemplate)">
+  <button type="button" class="btn btn-outline-dark" (click)="openRentFormModal(rentModalCreateTemplate)">
       Alugar
   </button>
 </div>
 
-<ng-template #AluguelModalCreateTemplate>
-  <form class="bg-light bg-gradient" [formGroup]="aluguelForm" (ngSubmit)="createAluguel()"> 
+<ng-template #rentModalCreateTemplate>
+  <form class="bg-light bg-gradient" [formGroup]="rentForm" (ngSubmit)="createRent()"> 
       <div class="modal-header">
           <h4 class="modal-title text-center fw-light">{{bookName}}</h4>
       </div>
       <div class="modal-body">
           <div class="container">
+
               <div class="row">
                   <div class="col-md-6">
                       <fieldset class="form-group">
@@ -28,13 +29,29 @@
                       </div>
                   </div>
               </div> 
+
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="CPF">CPF</label>
+                          <input type="text" formControlName="cpf" class="form-control" style="width: 100%;">
+                      </div>
+                  </div>
+              </div> 
+
           </div>
       </div>
+
       <div class="modal-footer">
           <div class="d-grid gap-2 col-6 mx-auto">
-              <button class="btn btn-outline-success" type="submit">Alugar</button>
-              <button type="button" class="btn btn-outline-danger" (click)="closeAluguelFormModal()">Cancelar</button>
+              <button class="btn btn-outline-success" type="submit" [disabled]="rentForm.invalid">
+                  Alugar
+              </button>
+              <button type="button" class="btn btn-outline-danger" (click)="closeRentFormModal()">
+                  Cancelar
+              </button>
           </div>
       </div>
+
   </form>
 </ng-template>
