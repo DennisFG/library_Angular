@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RentComponent } from './books/rent/rent.component';
-import { BooksComponent } from './books/books.component';
+import { RentComponent } from './components/books/rent/rent.component';
+import { BooksComponent } from './components/books/books.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HomePageComponent } from './components/home-page/home-page.component';

@@ -1,0 +1,40 @@
+<div class="d-grid gap-2 col-6 mx-auto">
+  <button type="button" class="btn btn-outline-dark" (click)="openAluguelFormModal(AluguelModalCreateTemplate)">
+      Alugar
+  </button>
+</div>
+
+<ng-template #AluguelModalCreateTemplate>
+  <form class="bg-light bg-gradient" [formGroup]="aluguelForm" (ngSubmit)="createAluguel()"> 
+      <div class="modal-header">
+          <h4 class="modal-title text-center fw-light">{{bookName}}</h4>
+      </div>
+      <div class="modal-body">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-6">
+                      <fieldset class="form-group">
+                          <label for="date">Data</label>
+                          <input type="text" formControlName="date" class="form-control" style="width: 100%;" bsDatepicker placeholder="Data para alugar" [bsConfig]="dateConfig">
+                      </fieldset>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="name">Responsável</label>
+                          <input type="text" formControlName="name" class="form-control" style="width: 100%;">
+                      </div>
+                  </div>
+              </div> 
+          </div>
+      </div>
+      <div class="modal-footer">
+          <div class="d-grid gap-2 col-6 mx-auto">
+              <button class="btn btn-outline-success" type="submit">Alugar</button>
+              <button type="button" class="btn btn-outline-danger" (click)="closeAluguelFormModal()">Cancelar</button>
+          </div>
+      </div>
+  </form>
+</ng-template>
