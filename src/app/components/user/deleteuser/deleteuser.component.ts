@@ -2,6 +2,7 @@ import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { User } from 'src/app/models/user.model';
+import { UserService } from 'src/app/services/user.service';
 
 
 
@@ -20,6 +21,7 @@ export class DeleteuserComponent implements OnInit {
 
   constructor(
     private bsModalService: BsModalService,
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -39,6 +41,14 @@ export class DeleteuserComponent implements OnInit {
 
   closeModalUserForm(): void {
     this.userFormBsModalRef.hide();
+  }
+
+  deleteUser() {
+    this.userService.deleteUser(this.user.id).subscribe(data =>{
+      alert("Usuario deletado com sucesso")
+    }, erros =>{
+      alert("Não foi possivel deletar o cliente")
+    })
   }
 
 

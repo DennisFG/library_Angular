@@ -18,6 +18,7 @@ import { RentComponent } from './components/books/rent/rent.component';
 import { BtnCreateComponent } from './components/books/rent/btn-create/btn-create.component';
 import { EditUserComponent } from './components/user/edit-user/edit-user.component';
 import { DeleteuserComponent } from './components/user/deleteuser/deleteuser.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { DeleteuserComponent } from './components/user/deleteuser/deleteuser.com
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

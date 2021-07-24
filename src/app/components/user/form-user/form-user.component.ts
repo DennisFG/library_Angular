@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output, TemplateRef } from '@angular/c
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { User } from 'src/app/models/user.model';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-form-user',
@@ -19,7 +20,7 @@ export class FormUserComponent implements OnInit {
   constructor(
     // private formBuilder: FormBuilder
     private bsModalService: BsModalService,
-    // private userService: UserService
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -52,24 +53,24 @@ export class FormUserComponent implements OnInit {
 
   createUser() {
     console.log("Form Submitted!", this.myForm.value);
-    this.closeModalUserForm();
     this.users.push(this.myForm.value);
     this.userCreated.emit(this.myForm.value);
-
-    // this.clienteService.postCliente(this.clienteForm.value).subscribe(data => {
-    //   console.log(data);
-    // }, error => {
-    //   console.log(error)
-    // });
-
-    // this.myForm.reset();
-  }
-
-  onUserCreated(event: any) {
-    console.log(event);
-    this.users.push(event);
-    this.users.forEach((user, i) => {
-      user.id = i + 1;
-    })
-  }
+    this.userService.postUser(this.myForm.value).subscribe(data => {
+      console.log(data);
+    }, error => {
+      console.log(error)
+    });
+    this.myForm.reset();
 }
+
+onUserCreated(event: any) {
+  console.log(event);
+  this.users.push(event);
+  this.users.forEach((user, i) => {
+    user.id = i + 1;
+  })
+}
+
+  
+}
+
