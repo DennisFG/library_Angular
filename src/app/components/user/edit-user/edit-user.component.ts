@@ -1,27 +1,25 @@
-import { Component, EventEmitter, OnInit, Output, TemplateRef } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-form-user',
-  templateUrl: './form-user.component.html',
-  styleUrls: ['./form-user.component.css']
+  selector: 'app-edit-user',
+  templateUrl: './edit-user.component.html',
+  styleUrls: ['./edit-user.component.css']
 })
-export class FormUserComponent implements OnInit {
+export class EditUserComponent implements OnInit {
+
+  @Input() user!: User;
 
   myForm!: FormGroup;
   userFormBsModalRef!: BsModalRef;
   users: User[] = [];
 
-  @Output() userCreated = new EventEmitter<any>();
+  constructor(private bsModalService: BsModalService,
+    private userService: UserService) { }
 
-  constructor(
-    // private formBuilder: FormBuilder
-    private bsModalService: BsModalService,
-    private userService: UserService
-  ) { }
 
   ngOnInit(): void {
     this.myForm = new FormGroup({
@@ -51,26 +49,15 @@ export class FormUserComponent implements OnInit {
     this.userFormBsModalRef.hide();
   }
 
-  createUser() {
-    console.log("Form Submitted!", this.myForm.value);
-    this.users.push(this.myForm.value);
-    this.userCreated.emit(this.myForm.value);
-    this.userService.postUser(this.myForm.value).subscribe(data => {
-      console.log(data);
-    }, error => {
-      console.log(error)
-    });
-    this.myForm.reset();
-}
+  editUser() {
+    this.closeModalUserForm();
+    console.log(this.myForm);
+    this.userService.editUser(this.user.id, this.myForm.value.name, this.myForm.value.cpf, this.myForm.value.email, this.myForm.value.password)
+    .subscribe(user =>{
+      alert(`${this.myForm.value.name} editado com sucesso`)
+    }, error =>{
+      alert(`Erro, tente novamente!`)
+    }) 
+  }
 
-onUserCreated(event: any) {
-  console.log(event);
-  this.users.push(event);
-  this.users.forEach((user, i) => {
-    user.id = i + 1;
-  })
 }
-
-  
-}
-

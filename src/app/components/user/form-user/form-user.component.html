@@ -35,6 +35,10 @@
 
             <button type="submit" class="btn btn-outline-success mt-4" [disabled]="myForm.invalid"
               (icreateUser)="onUserCreated($event)">Cadastrar</button>
+            {{ " " }}
+              <button type="button" class="btn btn-outline-warning mt-4" (click)="closeModalUserForm()">
+                Cancelar
+            </button>
           </form>
 
         </div>
