@@ -9,20 +9,18 @@ import { User } from '../../models/user.model';
 })
 export class UserComponent implements OnInit {
 
-  users: User[] = [];
-
-  constructor(private userService: UserService) { }
+  constructor(public userService: UserService) { }
 
   ngOnInit(): void {
     this.userService.getAll().subscribe((data: User[])=>{
       console.log(data);
-      this.users = data;
+      this.userService.users = data;
     }, error => {alert("Ocorreu um erro!")});
   }
 
   onUserCreated(event: any) {
-    this.users.push(event);
-    this.users.forEach((user, i) => {
+    this.userService.users.push(event);
+    this.userService.users.forEach((user, i) => {
       user.id = i + 1;
     })
    

@@ -10,6 +10,7 @@ import { Book } from '../models/book.model';
 export class BooksService {
 
   books: Book[] = [];
+  
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
       console.error('An error occurred:', error.error.message);

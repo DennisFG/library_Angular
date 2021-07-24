@@ -13,7 +13,7 @@
               <th scope="col"></th>
           </tr>
       </thead>
-      <tbody *ngFor="let user of users">
+      <tbody *ngFor="let user of userService.users">
           <tr>
               <td>{{user.name}}</td>
               <td>{{user.cpf}}</td>

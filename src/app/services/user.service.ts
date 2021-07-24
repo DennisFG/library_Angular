@@ -8,6 +8,8 @@ import { User } from '../models/user.model';
 })
 export class UserService {
 
+  users: User[] = [];
+
   private apiServer = "http://localhost:3000";
 
   constructor(private http: HttpClient) { }
