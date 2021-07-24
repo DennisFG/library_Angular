@@ -11,17 +11,20 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class BtnCreateComponent implements OnInit {
 
   @Input() bookName: string = '';
+  @Input() bookIsAvailable: boolean;
+
   rentFormBsModalRef!: BsModalRef;
   rentForm!: FormGroup;
 
   dateConfig: BsDatepickerConfig = new BsDatepickerConfig()
+
   constructor(
     private bsModalService: BsModalService
   ) { }
 
   ngOnInit(): void {
     this.rentForm = new FormGroup({  
-      date: new FormControl(),
+      date: new FormControl("", Validators.required),
       cpf: new FormControl("", [
         Validators.required, Validators.minLength(11), 
         Validators.maxLength(11), Validators.pattern('^[0-9]*$')]),
@@ -43,8 +46,11 @@ export class BtnCreateComponent implements OnInit {
   }
 
   createRent() {
+    console.log(this.bookName);
+    console.log(this.rentForm.value.cpf)
+    // ToDo - Implementar regra de validação do documento em Users
     this.rentFormBsModalRef.hide();
-    console.log(this.rentForm);
+    console.log(this.rentForm);    
   }
 
 }

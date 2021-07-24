@@ -7,7 +7,10 @@
                     <div class="card mt-4">
                         <img class="card-img-top img-responsive" width="354" height="508" src="{{ book.imgPath }}">
                         <div class="card-body text-center">
-                            <app-btn-create [bookName]="book.name"></app-btn-create>
+                            <app-btn-create 
+                                [bookName]="book.name" 
+                                [bookIsAvailable]="book.isAvailable">
+                            </app-btn-create>
                         </div>
                     </div>
                 </div>

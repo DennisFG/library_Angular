@@ -25,7 +25,7 @@ export class BooksComponent implements OnInit {
     name: 'Harry Potter e o prisioneiro de Azkaban',
     author: 'J.K. Rowling',
     imgPath: '../../assets/booksImg/HP-3.jpg',
-    isAvailable: true
+    isAvailable: false
   },{
     isbn13: '978-8532530813',
     name: 'Harry Potter e o cálice de fogo',
