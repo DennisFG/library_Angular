@@ -1,23 +1,22 @@
 <button class="btn btn-outline-danger mb-1 btn-sm" (click)="openUserFormModal(userModalDeleteTemplate)">
     Remover
-  </button>
+</button>
 
-  <ng-template #userModalDeleteTemplate>
-    <form [formGroup]="clienteForm" (ngSubmit)="deleteCliente()">
+<ng-template #userModalDeleteTemplate>
+    <form [formGroup]="myForm" (ngSubmit)="deleteUser()">
         <div class="modal-header">
             <h4 class="modal-title pull-left">Deletar Cliente</h4>
         </div>
 
         <div class="modal-body">
             <div class="container">
-                <h5 class="text-center text-danger">Tem certeza que deseja excluir o Usuário"{{ user.name }}" ?</h5>
+                <h5 class="text-center text-danger">Tem certeza que deseja excluir o usuário "{{ user.name }}" ?</h5>
             </div>
         </div>
 
         <div class="modal-footer">
             <div class="container text-center">
-                <button class="btn btn-info" type="submit">Deletar
-                </button>
+                <button class="btn btn-info" type="submit">Deletar </button>
                 <button type="button" class="btn btn-default ml-2" (click)="closeModalUserForm();">Cancelar</button>
             </div>
         </div>

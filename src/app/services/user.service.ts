@@ -10,11 +10,11 @@ export class UserService {
 
   users: User[] = [];
 
-  private apiServer = "http://localhost:4200";
+  private apiServer = "http://localhost:3000";
 
   constructor(private http: HttpClient) { }
 
-  postUser(user : User): Observable<User> {
+  postUser(user: User): Observable<User> {
     return this.http.post<User>(this.apiServer + '/users', user);
   }
 
@@ -23,12 +23,12 @@ export class UserService {
   }
 
   editUser(id: number, name: string, cpf: string, email: string, password: string): Observable<User> {
-    const body = {name: name, cpf: cpf, email: email, password: password}
+    const body = { name: name, cpf: cpf, email: email, password: password }
     return this.http.put<User>(this.apiServer + '/users' + id, body)
   }
 
   deleteUser(id: number) {
-    return this.http.delete<User>(this.apiServer + '/users' + id);
+    return this.http.delete(this.apiServer + `/users/${id}`);
   }
 
 }
