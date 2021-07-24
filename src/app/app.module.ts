@@ -9,6 +9,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './components/user/user.component';
 import { FormUserComponent } from './components/user/form-user/form-user.component';
@@ -19,6 +20,9 @@ import { BtnCreateComponent } from './components/books/rent/btn-create/btn-creat
 import { EditUserComponent } from './components/user/edit-user/edit-user.component';
 import { DeleteuserComponent } from './components/user/deleteuser/deleteuser.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
+
+
 
 @NgModule({
   declarations: [
@@ -32,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     RentComponent,
     BtnCreateComponent,
     EditUserComponent,
-    DeleteuserComponent
+    DeleteuserComponent,
+    HeaderComponent
 
   ],
   imports: [
@@ -42,7 +47,9 @@ import { HttpClientModule } from '@angular/common/http';
     BsDatepickerModule.forRoot(),
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CollapseModule.forRoot(),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
