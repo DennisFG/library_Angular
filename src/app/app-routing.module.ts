@@ -8,7 +8,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
+  { path: 'home', component: HomePageComponent },
   {
     path: 'books', component: BooksComponent, children: [
       // { path: 'rent', component: RentComponent },

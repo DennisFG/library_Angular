@@ -10,7 +10,7 @@ export class UserService {
 
   users: User[] = [];
 
-  private apiServer = "http://localhost:3000";
+  private apiServer = "http://localhost:4200";
 
   constructor(private http: HttpClient) { }
 
