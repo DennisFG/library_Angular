@@ -9,7 +9,7 @@
 </div>
 
 <ng-template #rentModalCreateTemplate>
-  <form class="bg-light bg-gradient" [formGroup]="rentForm" (ngSubmit)="valideUserByCPF()"> 
+  <form class="bg-light bg-gradient" [formGroup]="rentForm" (ngSubmit)="createRent()"> 
       <div class="modal-header">
           <h4 class="modal-title text-center fw-light">{{bookName}}</h4>
       </div>
@@ -24,15 +24,6 @@
                       </fieldset>
                   </div>
               </div>
-
-              <div class="row">
-                  <div class="col-md-6">
-                      <div class="form-group">
-                          <label for="name">Responsável</label>
-                          <input type="text" formControlName="name" class="form-control" style="width: 100%;">
-                      </div>
-                  </div>
-              </div> 
 
               <div class="row">
                   <div class="col-md-6">
