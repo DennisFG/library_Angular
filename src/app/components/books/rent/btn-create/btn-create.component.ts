@@ -2,7 +2,9 @@ import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { User } from 'src/app/models/user.model';
 import { RentService } from 'src/app/services/rent.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-btn-create',
@@ -22,7 +24,8 @@ export class BtnCreateComponent implements OnInit {
 
   constructor(
     private bsModalService: BsModalService,
-    private rentService: RentService
+    private rentService: RentService,
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -48,20 +51,63 @@ export class BtnCreateComponent implements OnInit {
     this.rentFormBsModalRef.hide();    
   }
 
-  createRent() {
-    console.log(this.bookName);
-    console.log(this.bookIsbn13);
-    console.log(this.rentForm.value.cpf);
-    
-    const canRent = (this.rentService.getRent(this.bookIsbn13) === null);
+  // createRent() {
+  //   console.log(this.bookName);
+  //   console.log(this.bookIsbn13);
+  //   console.log(this.rentForm.value.cpf);
 
-    if (this.rentService.getRent(this.bookIsbn13) === null) {      
-      this.rentService.saveRent(this.bookIsbn13, this.rentForm.value.cpf);        
-      this.rentFormBsModalRef.hide();
-      alert("Aluguel Registrado");
-      console.log(this.rentForm);
+  //   // const ok = this.valideUserByCPF(this.rentForm.value.cpf);
+    
+  //   if (ok) { 
+  //     console.log("Validando CPF:", this.valideUserByCPF(this.rentForm.value.cpf));
+
+  //     if (this.rentService.getRent(this.bookIsbn13) === null) {
+  //       console.log("Livro alugado:", this.rentService.getRent(this.bookIsbn13) === null);
+
+  //       this.rentService.saveRent(this.bookIsbn13, this.rentForm.value.cpf);        
+  //       this.rentFormBsModalRef.hide();
+  //       window.location.reload();
+  //       // alert("Aluguel Registrado");        
+  //     } else {
+  //       alert("Livro já esta alugado!");
+  //     }
+  //   } else {
+  //     alert("CPF não cadastrado!")
+  //   }
+  // }
+
+  async valideUserByCPF() {
+    let cpf = this.rentForm.value.cpf;
+
+    let cpfGet: string = '';
+    console.log("valideUserByCPF");
+    this.userService
+      .getByCPF(cpf)
+      .subscribe(
+        data => {
+          console.log("data", data);
+          cpfGet = data[0].cpf;
+        }, erros => {
+          alert(erros)
+        })
+    
+    let ok = await (cpfGet === cpf);
+
+    if (ok) { 
+      // console.log("Validando CPF:", this.valideUserByCPF(cpf));
+
+      if (this.rentService.getRent(this.bookIsbn13) === null) {
+        console.log("Livro alugado:", this.rentService.getRent(this.bookIsbn13) === null);
+
+        this.rentService.saveRent(this.bookIsbn13, this.rentForm.value.cpf);        
+        this.rentFormBsModalRef.hide();
+        window.location.reload();
+        // alert("Aluguel Registrado");        
+      } else {
+        alert("Livro já esta alugado!");
+      }
     } else {
-      alert("Livro já esta alugado!");
+      alert("CPF não cadastrado!")
     }
   }
 

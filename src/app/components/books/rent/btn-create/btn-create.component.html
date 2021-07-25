@@ -9,7 +9,7 @@
 </div>
 
 <ng-template #rentModalCreateTemplate>
-  <form class="bg-light bg-gradient" [formGroup]="rentForm" (ngSubmit)="createRent()"> 
+  <form class="bg-light bg-gradient" [formGroup]="rentForm" (ngSubmit)="valideUserByCPF()"> 
       <div class="modal-header">
           <h4 class="modal-title text-center fw-light">{{bookName}}</h4>
       </div>

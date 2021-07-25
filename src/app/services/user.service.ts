@@ -22,6 +22,10 @@ export class UserService {
     return this.http.get<User[]>(this.apiServer + '/users');
   }
 
+  getByCPF(cpf: string): Observable<User> {
+    return this.http.get<User>(this.apiServer + `/users?cpf=${cpf}`);
+  }
+
   editUser(id: number, name: string, cpf: string, email: string, password: string): Observable<User> {
     const body = { name: name, cpf: cpf, email: email, password: password }
     return this.http.put<User>(this.apiServer + '/users' + id, body)
