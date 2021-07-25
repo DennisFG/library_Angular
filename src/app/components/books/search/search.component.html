@@ -1,0 +1,35 @@
+<div class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Pesquise..." aria-label="Search" #bookInput (keydown.enter)="searchBook(bookInput, bookModal)">
+    <button class="btn btn-outline-success" (click)="searchBook(bookInput, bookModal)">Pesquisar</button>
+</div>
+<ng-template #bookModal>
+  <div class="modal-header">
+      <h4 class="modal-title pull-left">Resultado da Busca</h4>
+  </div>
+
+  <div class="modal-body">
+    <div class="container">
+      <div class="col-md-12" *ngFor="let item of booksSearch">
+        <div class="card mt-4">
+          <img *ngIf="item.imgPath" class="card-img-top img-responsive" width="354" height="508" src="{{ item.imgPath }}">
+          <p class="text-center" *ngIf="!item.imgPath">Imagem indisponível!</p>
+          <div class="card-body text-center">
+            <app-btn-create 
+              [bookName]="item.name"
+              [bookIsAvailable]="item.isAvailable">
+            </app-btn-create>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+      <div class="container">
+        <button type="button" class="btn btn-light ml-2" (click)="closeModal()">
+              Cancelar
+        </button>
+      </div>
+  </div>
+</ng-template>
+

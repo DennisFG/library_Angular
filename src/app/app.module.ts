@@ -21,6 +21,7 @@ import { EditUserComponent } from './components/user/edit-user/edit-user.compone
 import { DeleteuserComponent } from './components/user/deleteuser/deleteuser.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
+import { SearchComponent } from './components/books/search/search.component';
 
 
 
@@ -37,7 +38,8 @@ import { HeaderComponent } from './components/header/header.component';
     BtnCreateComponent,
     EditUserComponent,
     DeleteuserComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchComponent
 
   ],
   imports: [
