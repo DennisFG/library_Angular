@@ -10,7 +10,8 @@ import { Book } from '../models/book.model';
 export class BooksService {
 
   books: Book[] = [];
-  
+  booksSearch: Book[] = [];
+
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
       console.error('An error occurred:', error.error.message);
@@ -30,6 +31,13 @@ export class BooksService {
 
   getBook(search,subject, order,maxResults): Observable<any>{
     return this.http.get(`https://www.googleapis.com/books/v1/volumes?q=${search}:${subject}&orderBy=${order}&maxResults=${maxResults}`).pipe(
+      map(this.extractData),
+      catchError(this.handleError)
+    );
+  }
+
+  getSearchBook(search, order): Observable<any>{
+    return this.http.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&orderBy=${order}`).pipe(
       map(this.extractData),
       catchError(this.handleError)
     );
