@@ -10,7 +10,6 @@ import { Book } from '../models/book.model';
 export class BooksService {
 
   books: Book[] = [];
-  booksSearch: Book[] = [];
 
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {

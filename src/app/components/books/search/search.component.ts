@@ -19,25 +19,29 @@ export class SearchComponent implements OnInit {
 
   }
 
+  booksSearch = [];
   searchBook(input, template: TemplateRef<any>) {
     let inputSearch = input.value.replace(" ", "+");
     input.value = "";
     this.booksService.getSearchBook(inputSearch, "relevance").subscribe(data => {
-      data.forEach((item) => {
-        this.booksService.booksSearch.push({
-          isbn13: item?.id,
-          name: item?.volumeInfo?.title,
-          author: item?.volumeInfo?.authors ? item?.volumeInfo?.authors[0] : null,
-          imgPath: item?.volumeInfo?.imageLinks?.thumbnail,
-          isAvailable: true
+      if (Object.entries(data).length > 0) {
+        data.forEach((item) => {
+          this.booksSearch.push({
+            isbn13: item?.id,
+            name: item?.volumeInfo?.title,
+            author: item?.volumeInfo?.authors ? item?.volumeInfo?.authors[0] : null,
+            imgPath: item?.volumeInfo?.imageLinks?.thumbnail,
+            isAvailable: true
+          })
         })
-      })   
+      this.bookBsModalRef = this.bsModalService.show(template, {
+      class: 'modal-sl modal-dialog-centered'
+      })} else {
+        alert("Não encontrei este livro. Procure por outro!")
+      }
     },
     error => alert("Erro!"))
-    
-    this.bookBsModalRef = this.bsModalService.show(template, {
-      class: 'modal-sl modal-dialog-centered'
-    })
+    this.booksSearch = [];    
   }
   
   closeModal(): void {

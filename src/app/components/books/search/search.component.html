@@ -9,7 +9,7 @@
 
   <div class="modal-body">
     <div class="container">
-      <div class="col-md-12" *ngFor="let item of booksService.booksSearch">
+      <div class="col-md-12" *ngFor="let item of booksSearch">
         <div class="card mt-4">
           <img *ngIf="item.imgPath" class="card-img-top img-responsive" width="354" height="508" src="{{ item.imgPath }}">
           <p class="text-center" *ngIf="!item.imgPath">Imagem indisponível!</p>
