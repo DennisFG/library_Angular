@@ -19,7 +19,7 @@
               <td>{{user.cpf}}</td>
               <td>{{user.email}}</td>
               <td>
-                <app-edit-user></app-edit-user>
+                <app-edit-user [user]="user"></app-edit-user>
                 {{ ''}}
                 <app-deleteuser [user]="user"></app-deleteuser>
               

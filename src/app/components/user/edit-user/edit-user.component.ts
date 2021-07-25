@@ -51,13 +51,12 @@ export class EditUserComponent implements OnInit {
 
   editUser() {
     this.closeModalUserForm();
-    console.log(this.myForm);
-    this.userService.editUser(this.user.id, this.myForm.value.name, this.myForm.value.cpf, this.myForm.value.email, this.myForm.value.password)
-    .subscribe(user =>{
-      alert(`${this.myForm.value.name} editado com sucesso`)
-    }, error =>{
-      alert(`Erro, tente novamente!`)
-    }) 
+    this.userService
+      .editUser(this.user.id, this.myForm.value.name, this.myForm.value.cpf, this.myForm.value.email, this.myForm.value.password)
+      .subscribe(user => {
+        alert(`${this.myForm.value.name} editado com sucesso`);
+      }, error => {
+        alert(`Erro, tente novamente!`)
+      })
   }
-
 }

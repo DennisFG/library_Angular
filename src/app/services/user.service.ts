@@ -28,7 +28,7 @@ export class UserService {
 
   editUser(id: number, name: string, cpf: string, email: string, password: string): Observable<User> {
     const body = { name: name, cpf: cpf, email: email, password: password }
-    return this.http.put<User>(this.apiServer + '/users' + id, body)
+    return this.http.put<User>(this.apiServer + `/users/${id}`, body)
   }
 
   deleteUser(id: number) {
