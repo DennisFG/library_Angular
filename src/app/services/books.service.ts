@@ -22,7 +22,9 @@ export class BooksService {
     return throwError(
       'Something bad happened; please try again later.');
   }
+  
   constructor(private http: HttpClient) { }
+  
   private extractData(res: Response): any {
     const body = res;
     return body["items"] || { };
