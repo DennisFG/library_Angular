@@ -44,12 +44,15 @@ export class DeleteuserComponent implements OnInit {
   }
 
   deleteUser() {
-    this.userService.deleteUser(this.user.id).subscribe(data =>{
-      alert("Usuario deletado com sucesso")
-    }, erros =>{
-      alert("Não foi possivel deletar o cliente")
-    })
+    this.userService
+      .deleteUser(this.user.id)
+      .subscribe(
+        data => {
+          alert("Usuario deletado com sucesso")
+          window.location.reload();
+        }, erros => {
+          alert("Não foi possivel deletar o cliente")
+        })
+    this.userFormBsModalRef.hide();
   }
-
-
 }

@@ -12,10 +12,12 @@ export class UserComponent implements OnInit {
   constructor(public userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.getAll().subscribe((data: User[])=>{
-      console.log(data);
-      this.userService.users = data;
-    }, error => {alert("Ocorreu um erro!")});
+    this.userService
+      .getAll()
+      .subscribe((data: User[]) => {
+        console.log(data);
+        this.userService.users = data;
+      }, error => { alert("Ocorreu um erro!") });
   }
 
   onUserCreated(event: any) {
@@ -23,7 +25,7 @@ export class UserComponent implements OnInit {
     this.userService.users.forEach((user, i) => {
       user.id = i + 1;
     })
-   
+
   }
 
 }
