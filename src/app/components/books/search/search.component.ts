@@ -1,5 +1,7 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { User } from 'src/app/models/user.model';
+import { UserService } from 'src/app/services/user.service';
 import { BooksService } from '../../../services/books.service';
 
 @Component({
@@ -9,14 +11,26 @@ import { BooksService } from '../../../services/books.service';
 })
 export class SearchComponent implements OnInit {
 
+  userLogged!: boolean;
   bookBsModalRef!: BsModalRef;
   constructor(
     private bsModalService: BsModalService,
-    public booksService: BooksService
+    public booksService: BooksService,
+    public userService: UserService
   ) { }
 
   ngOnInit(): void {
-
+    if (this.userService.getUser("logged")) {
+      let cpf = this.userService.getUser("logged");
+      this.userService
+      .getByCPF(cpf)
+        .subscribe((data: User) => {
+          this.userLogged = data[0].isLogged;
+      }, error => { 
+        alert("Ocorreu um erro!");
+        console.log(error);
+      }); 
+    }
   }
 
   searchBook(input, template: TemplateRef<any>) {

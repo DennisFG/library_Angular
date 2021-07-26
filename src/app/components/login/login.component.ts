@@ -50,10 +50,11 @@ export class LoginComponent implements OnInit {
     userName.value = "";
     password.value = "";
     if (userExist) {
+      window.location.reload();
       alert("Usuário Logado!");
-      this.router.navigate(['/']);
     } else {
       alert("Usuário ou senha incorretos!")
     }
+    this.router.navigate(['/']);
   }
 }

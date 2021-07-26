@@ -1,6 +1,6 @@
 <div class="d-flex">
-    <input class="form-control me-2" type="search" placeholder="Pesquise..." aria-label="Search" #bookInput (keydown.enter)="searchBook(bookInput, bookModal)">
-    <button class="btn btn-outline-success" (click)="searchBook(bookInput, bookModal)">Pesquisar</button>
+    <input class="form-control me-2" type="search" placeholder="Pesquise..." aria-label="Search" [disabled]="!userLogged" #bookInput (keydown.enter)="searchBook(bookInput, bookModal)">
+    <button class="btn btn-outline-success" [disabled]="!userLogged" (click)="searchBook(bookInput, bookModal)">Pesquisar</button>
 </div>
 <ng-template #bookModal>
   <div class="modal-header">
