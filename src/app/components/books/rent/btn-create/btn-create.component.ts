@@ -60,15 +60,15 @@ export class BtnCreateComponent implements OnInit {
   }
 
   createRent() {
-    let ok: boolean = false;       
+    let cpfExist: boolean = false;       
 
     for (let item of this.userService.users) {
       if (item.cpf === this.rentForm.value.cpf) {
-        ok = true;
+        cpfExist = true;
       }
     }
     
-    if (ok) {
+    if (cpfExist) {
       if (this.rentService.getRent(this.bookIsbn13) === null) {
         this.rentService.saveRent(this.bookIsbn13, this.rentForm.value.cpf);        
         this.rentFormBsModalRef.hide();
