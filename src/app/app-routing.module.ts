@@ -9,20 +9,9 @@ import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  {
-    path: 'books', component: BooksComponent, children: [
-      // { path: 'rent', component: RentComponent },
-    ]
-  },
+  { path: 'books', component: BooksComponent },
   { path: 'user', component: UserComponent },
   { path: 'login', component: LoginComponent },
-  // abaixo, inserir página com validação
-  // {
-  //   path: 'usuarios', canActivate: [AuthGuard], component: UsersComponent, children: [
-  //     { path: ':id', component: UsersComponent },
-  //     { path: ':id/edit', component: EditUserComponent }
-  //   ]
-  // },
   { path: 'not-found', component: PageNotFoundComponent },
   { path: '**', redirectTo: '/not-found' }
 ];

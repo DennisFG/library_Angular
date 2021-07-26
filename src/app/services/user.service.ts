@@ -9,6 +9,7 @@ import { User } from '../models/user.model';
 export class UserService {
 
   users: User[] = [];
+  isLogged: boolean = false;
 
   private apiServer = "http://localhost:3000";
 
