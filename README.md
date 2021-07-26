@@ -21,6 +21,6 @@ Assim que seu usuário for autenticado você terá acesso à aba de livros. Nest
 ## :books: Bibliotecas instaladas
 
 - [Bootstrap 5](https://getbootstrap.com/)
-- [ngx-bootstrap 6.2.0] (https://valor-software.com/ngx-bootstrap)
+- [ngx-bootstrap 6.2.0](https://valor-software.com/ngx-bootstrap)
 
 <br />
