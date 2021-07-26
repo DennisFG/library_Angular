@@ -19,14 +19,13 @@ export class SearchComponent implements OnInit {
 
   }
 
-  booksSearch = [];
   searchBook(input, template: TemplateRef<any>) {
     let inputSearch = input.value.replace(" ", "+");
     input.value = "";
     this.booksService.getSearchBook(inputSearch, "relevance").subscribe(data => {
       if (Object.entries(data).length > 0) {
         data.forEach((item) => {
-          this.booksSearch.push({
+          this.booksService.books.push({
             isbn13: item?.id,
             name: item?.volumeInfo?.title,
             author: item?.volumeInfo?.authors ? item?.volumeInfo?.authors[0] : null,
@@ -41,7 +40,7 @@ export class SearchComponent implements OnInit {
       }
     },
     error => alert("Erro!"))
-    this.booksSearch = [];    
+    this.booksService.books = [];    
   }
   
   closeModal(): void {
