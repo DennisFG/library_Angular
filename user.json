@@ -5,6 +5,7 @@
       "name": "Debora Orsolon",
       "cpf": "333.322.877-20",
       "email": "debora@gmail.com",
+      "isLogged": false,
       "password": "12349876"
     },
     {
@@ -12,6 +13,7 @@
       "name": "Rodrigo Matos",
       "cpf": "123.144.320-10",
       "email": "ro_ma@gmail.com",
+      "isLogged": false,
       "password": "87845655"
     },
     {
@@ -19,6 +21,7 @@
       "cpf": "11122233320",
       "email": "van@gmail.com",
       "password": "87654321",
+      "isLogged": false,
       "id": 3
     },
     {
@@ -26,6 +29,7 @@
       "cpf": "89845677730",
       "email": "ml@terra.com.br",
       "password": "09878956",
+      "isLogged": false,
       "id": 4
     },
     {
@@ -33,6 +37,7 @@
       "cpf": "30453971830",
       "email": "debora.orsolon@terra.com.br",
       "password": "12345678",
+      "isLogged": false,
       "id": 5
     },
     {
@@ -40,7 +45,16 @@
       "cpf": "12345678901",
       "email": "teste@gmail.com",
       "password": "12345678",
+      "isLogged": true,
       "id": 6
+    },
+    {
+      "name": "Débora Mello",
+      "cpf": "01234567891",
+      "email": "teste@teste.com.br",
+      "password": "123456789",
+      "isLogged": false,
+      "id": 7
     }
   ]
 }

@@ -9,7 +9,6 @@ import { User } from '../models/user.model';
 export class UserService {
 
   users: User[] = [];
-  isLogged: boolean = false;
 
   private apiServer = "http://localhost:3000";
 
@@ -17,6 +16,10 @@ export class UserService {
 
   postUser(user: User): Observable<User> {
     return this.http.post<User>(this.apiServer + '/users', user);
+  }
+
+  updateUser(user: User): Observable<User> {
+    return this.http.put<User>(this.apiServer + `/users/${user.id}`, user);
   }
 
   getAll(): Observable<User[]> {
@@ -34,6 +37,14 @@ export class UserService {
 
   deleteUser(id: number) {
     return this.http.delete(this.apiServer + `/users/${id}`);
+  }
+
+  saveUser (logged: string, cpf: string) {
+    localStorage.setItem(logged, cpf);
+  }
+
+  getUser (logged: string) {
+    return localStorage.getItem(logged);
   }
 
 }

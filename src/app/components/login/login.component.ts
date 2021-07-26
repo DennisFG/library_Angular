@@ -34,17 +34,26 @@ export class LoginComponent implements OnInit {
     for (let item of this.userService.users) {
       if (item.email === userName.value && item.password === password.value) {
         userExist = true;
+        item.isLogged = true;
+        this.userService.saveUser("logged", item.cpf)
+        this.userService
+      .updateUser(item)
+      .subscribe(
+        data => {
+          console.log(data);
+        }, error => {
+          console.log(error)
+        }
+      );
       }
     }
     userName.value = "";
     password.value = "";
     if (userExist) {
       alert("Usuário Logado!");
-      this.userService.isLogged = true;
       this.router.navigate(['/']);
     } else {
       alert("Usuário ou senha incorretos!")
-      this.userService.isLogged = false;
     }
   }
 }

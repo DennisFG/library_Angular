@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output, TemplateRef } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
@@ -18,7 +18,6 @@ export class FormUserComponent implements OnInit {
   @Output() userCreated = new EventEmitter<any>();
 
   constructor(
-    // private formBuilder: FormBuilder
     private bsModalService: BsModalService,
     private userService: UserService
   ) { }
@@ -56,6 +55,7 @@ export class FormUserComponent implements OnInit {
   }
 
   createUser() {
+    this.myForm.value.isLogged = false;
     console.log("Form Submitted!", this.myForm.value);
     this.users.push(this.myForm.value);
     this.userCreated.emit(this.myForm.value);
@@ -68,7 +68,6 @@ export class FormUserComponent implements OnInit {
           console.log(error)
         }
       );
-    // this.myForm.reset();
     this.userFormBsModalRef.hide();
   }
 
